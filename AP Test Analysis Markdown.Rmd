@@ -1,0 +1,115 @@
+---
+title: "AP Test Analysis"
+author: "Michael Brakenhoff"
+date: '2023-03-22'
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+library(readxl)
+library(dplyr)
+library(reshape2)
+library(ggplot2)
+library(knitr)
+source("C:/Users/brake/OneDrive/Documents/AP_Test_Analysis/Analysis.R")
+
+
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(fig.align = "center")
+
+
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+display_output <- function(dataset, out_type, filter_opt = 'none') {
+  
+  if (out_type == "html") {
+    out_table <- DT::datatable(dataset, filter = filter_opt)
+  } else {
+    out_table <- knitr::kable(dataset)
+  } 
+  
+  out_table
+}
+```
+## Introduction
+
+### A. Purpose
+
+To determine the state of the AP Program an analysis was performed to explore student participation, success, and any notable trends within the program. 
+
+### B. Aims
+
+Data visualization will be used to: 1. Explore the pass rates of AP test takers- overall, across subject areas, and compared to last year. 2. Compare the participation rate vs. participation goals. 3. Determine the effectiveness of interim exams to predict student outcomes. 4. Explore the effect of a students’ level participation in AP exams on their success. 5. Identify any notable anomalies. 
+
+## Analysis
+### AP Pass Rate
+
+A distribution of EMKS AP scores indicates limited success for our AP test takers. Distributions across all subject areas are skewed right with AP Language Arts having the highest success and AP Calculus the lowest.
+
+
+```{r }
+v1
+v2
+```
+
+A look at the overall pass/fail and across subject areas shows a low rate of success for this year with AP Language Arts showing the best pass rate at 47%. All other courses failed to cross the 35% mark with AP Calculus not having any students pass the exam this year. 
+
+```{r}
+v3 
+v4
+```
+
+We can see a clear trend in pass rates when compared to the previous year’s pass rates.
+
+```{r}
+v5
+
+```
+
+###  AP Interims & AP Pass Rates
+
+Exploring the predicted scores from the AP Interim test compared to a student’s actual result appears to be a mixed bag. When a student takes the test we see about 66% are correctly predicted. However, there is a relatively large number of students that were predicted to pass but failed. This makes up the majority of the incorrectly predicted test takers. If you include the students that did not participate because they were predicted to be below AP3, it appears likely that the interim exam is a good indicator.  
+
+```{r}
+v6
+v7
+v8
+```
+
+###  Quantity of Tests Taken vs. Student Success
+
+Another possible indicator of student success is the number of AP Test the student is attempting. There doesn’t appear to be any clear relationship between several tests taken and the number passed. The plot below indicates that students taking 3 tests were the most likely to pass at least one test. Contrarily, taking 2 AP tests had fewer pass at least one test than just taking a single test. The Pearson correlation (`r testcor`) supports the conclusion of a small but unreliable relationship between tests taken and the number of tests the student passes. Further exploration of possible lurking variables should also be explored.
+
+
+```{r}
+v9
+
+```
+
+###  Participation Rate
+
+Participation rates are far below the goal of 65%. The closest to that goal (AP Gov) was 36 points below the mark. We can see it’s the same trend for the index goal. 
+
+```{r}
+v10
+
+```
+
+```{r}
+v11
+
+```
+
+
+## Conclusions
+
+Given the significant drop in all metrics for the AP exam, I suspect that there has recently been a significant change to the AP exams or the school. I suspect that the drop in metrics is related to Covid policies and residual effects. I would further compare participation rates, pass rates, and predicted actual scores to rates before Covid-19 and in future years. 
