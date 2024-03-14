@@ -18,7 +18,7 @@ library(dplyr)
 library(reshape2)
 library(ggplot2)
 library(knitr)
-source("C:/Users/brake/OneDrive/Documents/AP_Test_Analysis/Analysis.R")
+source("C:/Users/brake/OneDrive/Documents/AP_Test_Analysis/AP_Test_Analysis/Analysis.R")
 
 
 knitr::opts_chunk$set(echo = FALSE)

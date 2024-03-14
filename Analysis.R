@@ -6,7 +6,7 @@ library(readxl)
 library(ggplot2)
 # Set working directory
 
-setwd("C:/Users/brake/OneDrive/Documents/AP_Test_Analysis")
+setwd("C:/Users/brake/OneDrive/Documents/AP_Test_Analysis/AP_Test_Analysis")
 
 # Data import: applying read_excel across sheets
 path = "AP_Test_Data.xlsx"
