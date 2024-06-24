@@ -41,6 +41,3 @@ Participation rates are far below the goal of 65%. The closest to that goal (AP 
 ## Conclusions
 Given the significant drop in all metrics for the AP exam, it is suspected that there has been a significant change to the AP exams or the school. The drop in metrics is likely related to Covid policies and residual effects. Further comparison of participation rates, pass rates, and predicted actual scores to rates before Covid-19 and in future years is recommended.
 
-## Author
-Michael Brakenhoff  
-2023-03-22
